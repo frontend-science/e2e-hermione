@@ -3,13 +3,15 @@ const config = require('config');
 const url = config.get('urls.client');
 const pageObject = require('../pages/todo');
 
+const texts = require('../l10n/en');
+
 describe('New todo input', function() {
     it('should have input with placeholder', function() {
         return this.browser
             .url(url.root)
             .getAttribute(pageObject.mainInput, 'placeholder')
             .then(function(text) {
-                assert.equal(text, 'What needs to be done?')
+                assert.equal(text, texts.inputPlaceHolder)
             });
     });
 });
@@ -27,21 +29,21 @@ describe('Add new todo', function() {
     it('should add new todo', function() {
         return this.browser
             .url(url.root)
-            .setValue(pageObject.mainInput, 'Clean up the room')
+            .setValue(pageObject.mainInput, texts.todoLine1)
             .keys('Enter')
             // .saveScreenshot('./debug/client/debug.png')
             .getText(pageObject.labelOfFirstItem)
             .then(function(text) {
-                assert.equal(text, 'Clean up the room')
+                assert.equal(text, texts.todoLine1)
             });
     });
 
     it('should update counter after adding new todo', function() {
         return this.browser
             .url(url.root)
-            .setValue(pageObject.mainInput, 'Clean up the room')
+            .setValue(pageObject.mainInput, texts.todoLine1)
             .keys('Enter')
-            .setValue(pageObject.mainInput, 'Check email')
+            .setValue(pageObject.mainInput, texts.todoLine2)
             .keys('Enter')
             .getText(pageObject.counterNumber)
             .then(function(text) {
