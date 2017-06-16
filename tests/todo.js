@@ -1,13 +1,13 @@
 const assert = require('chai').assert;
 const config = require('config');
 const url = config.get('urls.client');
-const dataObject = require('../pages/todo');
+const pageObject = require('../pages/todo');
 
 describe('Page loaded', function() {
     it('should have title', function() {
         return this.browser
             .url(url.root)
-            .getText(dataObject.mainHeader)
+            .getText(pageObject.mainHeader)
             .then(function(text) {
                 assert.equal(text, 'todos')
             });
@@ -16,7 +16,7 @@ describe('Page loaded', function() {
     it('should have example type title', function() {
         return this.browser
             .url(url.root)
-            .getText(dataObject.exampleType)
+            .getText(pageObject.exampleType)
             .then(function(text) {
                 assert.equal(text, 'Vanilla JavaScript Example')
             });
