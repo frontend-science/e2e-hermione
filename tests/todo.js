@@ -1,12 +1,13 @@
 const assert = require('chai').assert;
 const config = require('config');
 const url = config.get('urls.client');
+const dataObject = require('../pages/todo');
 
 describe('Page loaded', function() {
     it('should have title', function() {
         return this.browser
             .url(url.root)
-            .getText('.header h1')
+            .getText(dataObject.mainHeader)
             .then(function(text) {
                 assert.equal(text, 'todos')
             });
@@ -15,7 +16,7 @@ describe('Page loaded', function() {
     it('should have example type title', function() {
         return this.browser
             .url(url.root)
-            .getText('.source-links h5')
+            .getText(dataObject.exampleType)
             .then(function(text) {
                 assert.equal(text, 'Vanilla JavaScript Example')
             });
@@ -26,7 +27,7 @@ describe('New todo input', function() {
     it('should have input with placeholder', function() {
         return this.browser
             .url(url.root)
-            .getAttribute('.new-todo', 'placeholder')
+            .getAttribute(dataObject.mainInput, 'placeholder')
             .then(function(text) {
                 assert.equal(text, 'What needs to be done?')
             });
@@ -46,7 +47,7 @@ describe('Add new todo', function() {
     it('should add new todo', function() {
         return this.browser
             .url(url.root)
-            .setValue('.new-todo', 'Clean up the room')
+            .setValue(dataObject.mainInput, 'Clean up the room')
             .keys('Enter')
             // .saveScreenshot('./debug/client/debug.png')
             .getText('.todo-list li:nth-child(1) .view label')
@@ -58,11 +59,11 @@ describe('Add new todo', function() {
     it('should update counter after adding new todo', function() {
         return this.browser
             .url(url.root)
-            .setValue('.new-todo','Clean up the room')
+            .setValue(dataObject.mainInput, 'Clean up the room')
             .keys('Enter')
-            .setValue('.new-todo','Check email')
+            .setValue(dataObject.mainInput, 'Check email')
             .keys('Enter')
-            .getText('.todo-count strong')
+            .getText(dataObject.counterNumber)
             .then(function(text) {
                 assert.equal(text, '2')
             });
