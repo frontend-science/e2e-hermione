@@ -1,0 +1,12 @@
+{
+    "hosts": {
+        "client": "http://todomvc.com/examples/vanillajs/"
+    },
+    "tokens": {
+        "client": "AAAA"
+    },
+    "timeouts": {
+        "waitForClient": 1000,
+        "waitForShow": 1000
+    }
+}

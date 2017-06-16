@@ -1,0 +1,10 @@
+{
+    "urls": {
+        "client": {
+            "root": "http://todomvc.com/examples/vanillajs/"
+        }
+    },
+    "timeouts": {
+        "waitForShow": 1000
+    }
+}
