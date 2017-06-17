@@ -1,7 +1,14 @@
 {
+    "hosts": {
+        "client": "http://todomvc.com/",
+        "admin": "http://todomvc.com/"
+    },
     "urls": {
         "client": {
-            "root": "http://todomvc.com/examples/vanillajs/"
+            "root": "/examples/vanillajs/"
+        },
+        "admin": {
+            "root": "/examples/angularjs/"
         }
     },
     "timeouts": {

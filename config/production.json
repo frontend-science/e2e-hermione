@@ -1,0 +1,7 @@
+{
+    "urls": {
+        "client": {
+            "root": "/examples/backbone/"
+        }
+    }
+}

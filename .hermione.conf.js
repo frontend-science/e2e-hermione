@@ -6,10 +6,14 @@ module.exports = {
         client: {
             files: 'tests',
             browsers: ['clientChrome']
-        }
+        },
+        // admin: {
+        //     files: 'tests',
+        //     browsers: ['adminChrome']
+        // }
     },
-    retry: 1,
-    sessionsPerBrowser: 5,
+    // retry: 1,
+    // sessionsPerBrowser: 5,
     browsers: {
         clientChrome: {
             desiredCapabilities: {
@@ -17,6 +21,13 @@ module.exports = {
             },
             baseUrl: config.get('hosts.client'),
             screenshotPath: 'debug/client'
+        },
+        adminChrome: {
+            desiredCapabilities: {
+                browserName: 'chrome'
+            },
+            baseUrl: config.get('hosts.admin'),
+            screenshotPath: 'debug/admin'
         }
     }
 };

@@ -1,6 +1,7 @@
 {
     "hosts": {
-        "client": "http://todomvc.com/examples/vanillajs/"
+        "client": "http://todomvc.com/",
+        "admin": "http://todomvc.com/"
     },
     "tokens": {
         "client": "AAAA"
