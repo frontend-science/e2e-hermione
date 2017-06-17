@@ -103,3 +103,4 @@ NODE_ENV=production hermione -c hermione.conf.js tests/admin/mytest.js
 * [Hermione test framework](https://github.com/gemini-testing/hermione)
 * [Mocha test framework](http://mochajs.org)
 * [Chai](http://chaijs.com/api/)
+* [Page for testing](http://tlkeith.com/WebDriverIOTutorialTest.html) 
