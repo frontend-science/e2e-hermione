@@ -10,7 +10,7 @@ describe('Page loaded', function() {
 
             // wait for page load
             .waitForVisible(pageObject.mainInput, config.timeouts.waitForShow)
-            
+
             .getText(pageObject.mainHeader)
             .then(function(text) {
                 assert.equal(text, 'todos')

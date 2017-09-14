@@ -13,7 +13,7 @@ module.exports = {
         // }
     },
     // retry: 1,
-    // sessionsPerBrowser: 5,
+    sessionsPerBrowser: 3,
     browsers: {
         clientChrome: {
             desiredCapabilities: {
