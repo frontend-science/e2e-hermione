@@ -1,19 +1,20 @@
 const config = require('config');
 
 module.exports = {
-    // gridUrl: 'http://localhost:9515',
+    gridUrl: 'http://localhost:9515',
     sets: {
         client: {
-            files: 'tests',
+            files: 'tests/client',
             browsers: ['clientChrome']
         },
-        // admin: {
-        //     files: 'tests',
-        //     browsers: ['adminChrome']
-        // }
+        admin: {
+            files: 'tests/admin',
+            browsers: ['adminChrome']
+        }
     },
-    // retry: 1,
+    retry: 1,
     sessionsPerBrowser: 3,
+
     browsers: {
         clientChrome: {
             desiredCapabilities: {

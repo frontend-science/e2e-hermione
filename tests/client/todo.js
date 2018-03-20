@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const config = require('config');
 const url = config.get('urls.client');
-const pageObject = require('../pages/todo');
+const pageObject = require('../../pages/todo');
 
 describe('Page loaded', function() {
     it('should have title', function() {

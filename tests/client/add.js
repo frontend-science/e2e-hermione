@@ -1,9 +1,9 @@
 const assert = require('chai').assert;
 const config = require('config');
 const url = config.get('urls.client');
-const pageObject = require('../pages/todo');
+const pageObject = require('../../pages/todo');
 
-const texts = require('../l10n/en');
+const texts = require('../../l10n/en');
 
 describe('New todo input', function() {
     it('should have input with placeholder', function() {

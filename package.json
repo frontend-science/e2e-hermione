@@ -21,7 +21,7 @@
   "dependencies": {
     "chai": "^4.0.2",
     "config": "^1.26.1",
-    "hermione": "^0.36.0"
+    "hermione": "^0.52.0"
   },
   "devDependencies": {
     "eslint": "^3.19.0",
